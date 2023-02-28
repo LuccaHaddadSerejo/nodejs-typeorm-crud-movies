@@ -5,20 +5,16 @@ import {
   updateMovieController,
   deleteMovieController,
 } from "../controllers/moviesControllers";
-import {
-  checkDescriptionValue,
-  checkIfMovieExists,
-  checkUniqueName,
-} from "../middlewares/moviesMiddlewares";
+import { checkIfMovieExists, checkUniqueName } from "../middlewares/movies";
 import validateDataMiddleware from "../middlewares/validateDataMiddleware";
 import { reqMovieSchema, updateMovieSchema } from "../schemas";
+
 const moviesRoutes: Router = Router();
 
 moviesRoutes.post(
   "",
   validateDataMiddleware(reqMovieSchema),
   checkUniqueName,
-  checkDescriptionValue,
   createMovieController
 );
 

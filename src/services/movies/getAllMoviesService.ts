@@ -1,8 +1,7 @@
-import { FindOptionsOrder, FindOptionsOrderValue, Repository } from "typeorm";
+import { FindOptionsOrderValue, Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Movie } from "../../entities";
 import { iResMultipleMovies } from "../../interfaces/moviesInterfaces";
-import { multipleMoviesSchema } from "../../schemas";
 
 const getAllMoviesService = async (
   payload: any

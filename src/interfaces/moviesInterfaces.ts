@@ -4,14 +4,11 @@ import {
   movieCreateSchema,
   multipleMoviesSchema,
   reqMovieSchema,
-  updateMovieSchema,
 } from "../schemas";
 
 type tReqMovie = z.infer<typeof reqMovieSchema>;
 type tResMovie = z.infer<typeof movieCreateSchema>;
-type test = DeepPartial<tResMovie>;
-type tUpdatedMovie = z.infer<typeof updateMovieSchema>;
-type tResUpdatedMovie = DeepPartial<tUpdatedMovie>;
+type tUpdateMovie = DeepPartial<tReqMovie>;
 type tResMultipleMovies = z.infer<typeof multipleMoviesSchema>;
 
 interface iResMultipleMovies {
@@ -24,8 +21,7 @@ interface iResMultipleMovies {
 export {
   tReqMovie,
   tResMovie,
-  tResUpdatedMovie,
+  tUpdateMovie,
   tResMultipleMovies,
   iResMultipleMovies,
-  test,
 };
