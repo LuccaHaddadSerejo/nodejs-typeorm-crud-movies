@@ -1,8 +1,11 @@
 import { Request, Response } from "express";
-import createMovieService from "../services/movies/createMovieService";
-import deleteMovieService from "../services/movies/deleteMovieService";
-import getAllMoviesService from "../services/movies/getAllMoviesService";
-import updateMovieService from "../services/movies/updateMovieService";
+import {
+  createMovieService,
+  getAllMoviesService,
+  updateMovieService,
+  deleteMovieService,
+} from "../services/movies";
+
 const createMovieController = async (
   req: Request,
   res: Response

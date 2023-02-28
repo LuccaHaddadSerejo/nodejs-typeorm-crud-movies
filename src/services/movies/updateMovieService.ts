@@ -1,10 +1,10 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Movie } from "../../entities";
-import { tReqMovie, tResMovie } from "../../interfaces/moviesInterfaces";
+import { tResMovie, tUpdateMovie } from "../../interfaces/moviesInterfaces";
 
 const updateMovieService = async (
-  reqData: any,
+  reqData: tUpdateMovie,
   id: number
 ): Promise<tResMovie> => {
   const movieRepository: Repository<Movie> = AppDataSource.getRepository(Movie);
@@ -13,7 +13,7 @@ const updateMovieService = async (
     id: id,
   });
 
-  const movie: any = movieRepository.create({
+  const movie: Movie = movieRepository.create({
     ...oldData,
     ...reqData,
   });
